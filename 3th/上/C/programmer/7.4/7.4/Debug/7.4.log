@@ -1,0 +1,8 @@
+﻿  源.c
+c:\users\teacher.sang\documents\visual studio 2015\projects\7.4\7.4\源.c(18): warning C4133: “函数”: 从“int [64]”到“char *”的类型不兼容
+c:\users\teacher.sang\documents\visual studio 2015\projects\7.4\7.4\源.c(18): warning C4047: “=”:“char”与“char *”的间接级别不同
+c:\users\teacher.sang\documents\visual studio 2015\projects\7.4\7.4\源.c(12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+c:\users\teacher.sang\documents\visual studio 2015\projects\7.4\7.4\源.c(22): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int *”
+  7.4.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\7.4\Debug\7.4.exe
+  7.4.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\7.4\Debug\7.4.pdb (Full PDB)

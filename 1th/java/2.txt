@@ -1,0 +1,70 @@
+package weigh;
+import java.util.Scanner;
+
+public class ScannerInput {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a number in pounds :");
+		double weigh = input.nextDouble();
+		
+		double gratutity = weigh * 0.454 ;
+		System.out.println( weigh +  " pounds is " + gratutity + " kligrams ");
+
+	}
+
+}
+
+
+package time;
+
+import java.util.Scanner;
+
+public class time {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the number of minutes: ");
+		double minutes = input.nextDouble();
+		
+		int remainingMinutes = (int)minutes;
+		
+		int numberOfOneYears = remainingMinutes / 525600;
+		remainingMinutes = remainingMinutes % 525600;
+		
+		int numberOfOneDays = remainingMinutes / 1440;
+		remainingMinutes = remainingMinutes % 1440;
+		
+		System.out.println(minutes + " minutes is approximately " + numberOfOneYears + " years and " + numberOfOneDays + " days. ");
+
+	}
+
+}
+
+
+package solution;
+
+import java.util.Scanner;
+
+public class solution {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the amount of water in kilograms:");
+		double kliograms = input.nextDouble();
+		
+		System.out.println("Enter the amount of water in initial temperature:");
+		double initialTemperature = input.nextDouble();
+		
+		System.out.println("Enter the amount of water in final temperature:");
+		double finalTemperature = input.nextDouble();
+		
+		double Q = kliograms * (finalTemperature - initialTemperature) * 4184;
+		System.out.println("The energy needed is " + Q );
+
+	}
+
+}

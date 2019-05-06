@@ -1,0 +1,215 @@
+11.1~4
+
+public class GeometricObject1 {
+	private String color = "white";
+	private boolean filled;
+	private java.util.Date dateCreated;
+	
+	public GeometricObject1(){
+		dateCreated = new java.util.Date();
+	}
+	
+	public GeometricObject1(String color, boolean filled){
+		dateCreated = new java.util.Date();
+		this.color = color;
+		this.filled = filled;
+	}
+	
+	public String getColor(){
+		return color;
+	}
+	
+	public void setColor(String color){
+		this.color = color;
+	}
+	
+	public boolean isFilled(){
+		return filled;
+	}
+	
+	public void setFilled(boolean filled){
+		this.filled = filled;
+	}
+	
+	public java.util.Date getDateCreated(){
+		return dateCreated;
+	}
+	
+	public String toString(){
+		return "Created on " + dateCreated + "\ncolor: " + color + " and filled: " + filled;
+	}
+
+}
+
+
+
+public class Circle4 extends GeometricObject1{
+	private double radius;
+	
+	public Circle4(){
+	}
+	
+	public Circle4(double radius){
+		this.radius = radius;
+	}
+	
+	public Circle4(double radius, String color, boolean filled){
+		this.radius = radius;
+		setColor(color);
+		setFilled(filled);
+	}
+	
+	public double getRadius(){
+		return radius;
+	}
+	
+	public void setRadius(double radius){
+		this.radius = radius;
+	}
+	
+	public double getArea(){
+		return radius * radius * Math.PI;
+	}
+	
+	public double getDiameter(){
+		return 2 * radius;
+	}
+	
+	public double getPerimeter(){
+		return 2 * radius * Math.PI;
+	}
+	
+	public void printCircle(){
+		System.out.print("The circle is created " + getDateCreated() + " and the radius is " + radius);
+	}
+
+}
+
+
+
+public class Rectangle1 extends GeometricObject1{
+	private double width;
+	private double height;
+	
+	public Rectangle1(){
+	}
+	
+	public Rectangle1(double width, double height){
+		this.width = width;
+		this.height = height;
+	}
+	
+	public Rectangle1(double width, double height, String color, boolean filled){
+		this.width = width;
+		this.height = height;
+		setColor(color);
+		setFilled(filled);
+	}
+	
+	public double getWidth(){
+		return width;
+	}
+	
+	public void setWidth(double width){
+		this.width = width;
+	}
+	
+	public double getHeight(){
+		return height;
+	}
+	
+	public void setHeight(double height){
+		this.height = height;
+	}
+	
+	public double getArea(){
+		return width * height;
+	}
+	
+	public double getPerimeter(){
+		return 2 * (width + height);
+	}
+
+}
+
+
+
+public class TestCircleRectangle {
+
+	public static void main(String[] args) {
+		Circle4 circle = new Circle4(1);
+		System.out.println("A circle " + circle.toString());
+		System.out.println("The radius is " + circle.getRadius());
+		System.out.println("The area is " + circle.getArea());
+		System.out.println("The diameter is " + circle.getDiameter());
+		
+		Rectangle1 rectangle = new Rectangle1(2, 4);
+		System.out.println("\nA rectangle " + rectangle.toString());
+		System.out.println("The area is " + rectangle.getArea());
+		System.out.println("The perimeter is " + rectangle.getPerimeter());
+		
+
+	}
+
+}
+
+
+
+11.5
+
+public class PolymorphismDemo {
+
+	public static void main(String[] args) {
+		displayObject(new Circle4(1, "red", false));
+		displayObject(new Rectangle1(1, 1, "black", true));
+
+	}
+	
+	public static void displayObject(GeometricObject1 object){
+		System.out.println("Created on " + object.getDateCreated() + ". Color is " + object.getColor());
+	}
+
+}
+
+
+
+11.8
+
+public class TestArrayList {
+
+	public static void main(String[] args) {
+		java.util.ArrayList cityList = new java.util.ArrayList();
+		
+		cityList.add("London");
+		cityList.add("Denver");
+		cityList.add("Paris");
+		cityList.add("Miami");
+		cityList.add("Seoul");
+		cityList.add("Tokyo");
+		
+		System.out.println("List size? " + cityList.size() );
+		System.out.println("Is Miami in the List ? " + cityList.contains("Miami") );
+		System.out.println("The location of Denver in the list ? " + cityList.indexOf("Denver") );
+		System.out.println("Is the list empty ? " + cityList.isEmpty() );
+		
+		
+		cityList.add(2, "Xian");
+		cityList.remove("Miami");
+		cityList.remove(1);
+		
+		System.out.println(cityList.toString() );
+		
+		for (int i = cityList.size() - 1; i >= 0; i--)
+			System.out.print(cityList.get(i) + " ");
+		System.out.println();
+		
+		java.util.ArrayList list = new java.util.ArrayList();
+		
+		list.add(new Circle4(2));
+		list.add(new Circle4(3));
+		
+		System.out.println("The area of the circle? " + ((Circle4)list.get(0)).getArea());
+
+	}
+
+}

@@ -1,0 +1,6 @@
+﻿  Logic.c
+c:\users\mch\documents\visual studio 2015\projects\图书馆\图书馆\logic.c(14): warning C4013: “system”未定义；假设外部返回 int
+c:\users\mch\documents\visual studio 2015\projects\图书馆\图书馆\logic.c(39): warning C4013: “exit”未定义；假设外部返回 int
+c:\users\mch\documents\visual studio 2015\projects\图书馆\图书馆\logic.c(10): warning C4101: “BookName”: 未引用的局部变量
+  图书馆.vcxproj -> C:\Users\mch\documents\visual studio 2015\Projects\图书馆\Debug\图书馆.exe
+  图书馆.vcxproj -> C:\Users\mch\documents\visual studio 2015\Projects\图书馆\Debug\图书馆.pdb (Full PDB)
