@@ -1,0 +1,232 @@
+6.4
+public class CountLettersInArray {
+
+	public static void main(String[] args) {
+		char[] chars = createArray();
+		
+		System.out.println("The lowercase letters are: ");
+		displayCounts(chars);
+		
+		int[] counts = countLetters(chars);
+		
+		System.out.println();
+		System.out.println("The occirrences of each letter are:");
+		displayCounts(counts);
+
+	}
+	
+	public static char[] creatArray(){
+		char[] chars = new char[100];
+		
+		for (int i = 0; i < chars.length; i++)
+			chars[i] = RandomCharacter.getRandomLowerCaseLetter();
+		
+		return chars;
+	}
+	
+	public static void displayArrray(char[] chars){
+		for (int i = 0; i < chars.length; i++){
+			if((i + 1) % 20 == 0)
+				System.out.println(chars[i]);
+			else
+				System.out.println(chars[i] + " ");
+		}
+	}
+	
+	public static int[] countLetters(char[] chars){
+		int[] counts = new int[26];
+		
+		for (int i = 0; i < chars.length; i++)
+			counts[chars[i] - 'a']++;
+		
+		return counts;
+	}
+	
+	public static void displayCounts(int[] counts){
+		for (int i =0; i < counts.length; i++){
+			if((i + 1) % 10 == 0)
+				System.out.println(counts[i] + " " + (char)(i + 'a'));
+			else
+				System.out.println(counts[i] + " " + (char)(i + 'a') + " ");
+		}
+	}
+
+}
+
+
+6.1
+import java.util.Scanner;
+
+public class LottoNumbers {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		boolean[] isCovered = new boolean[99];
+		
+		int number = input.nextInt();
+		while (number != 0){
+			isCovered[number - 1] = true;
+			number = input.nextInt();
+		}
+		
+		boolean allCovered = true ;
+		for (int i = 0;i <99; i++)
+			if(!isCovered[i]){
+				allCovered = false;
+				break;
+			}
+		if(allCovered)
+			System.out.println("The trickets cover all numbers");
+		else
+			System.out.println("The tickets don't cover all numbers");
+	}
+
+}
+
+
+
+6.2
+public class DeckOfCards {
+
+	public static void main(String[] args) {
+		int[] deck = new int[52];
+		String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+		String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+		
+		for (int i= 0; i <deck.length;i++)
+			deck[i] =i;
+		
+		for (int i= 0; i <deck.length;i++){
+			int index = (int)(Math.random() * deck.length);
+			int temp = deck[i];
+			deck[i] = deck[index];
+			deck[index] = temp;
+		}
+		for(int i= 0; i < 4; i++){
+			String suit = suits[deck[i] / 13];
+			String rank = ranks[deck[i] % 13];
+			System.out.println("Card number " + deck[i] + ": " + rank + " of " + suit);
+		}
+
+	}
+
+}
+
+
+6.8
+public class SelectionSort {
+
+	public static void main(String[] args) {
+		double[] list = {1, 9, 4.5, 6.6, 5.7, -4.5};
+		for (int i = 0; i< list.length - 1; i++){
+			double currentMin = list[i];
+		int currentMinIndex = 1;
+		
+		for (int j = i +1; j < list.length; j++){
+			if (currentMin > list[j]){
+				currentMin = list[i];
+				currentMinIndex = j;
+			}
+		}
+		
+		if (currentMinIndex != i){
+			list[currentMinIndex] = list[i];
+			list[i] = currentMin;
+		
+		}
+		System.out.println(list[i]);
+		}
+	}
+}
+
+
+
+import java.util.Scanner;
+
+public class Distinct {
+
+	public static void main(String[] args) {
+		java.util.Scanner input = new java.util.Scanner(System.in);
+		System.out.print("Enter ten numbers: ");
+		
+		int list[] = new  int[10];
+		
+		for (int i = 0; i < list.length; i++){
+			list[i] = input.nextInt();
+		}
+		
+		for (int i = 0; i< list.length - 1; i++){
+		
+			int currentMin = list[i];
+	    
+			int currentMinIndex = i;
+	
+		
+			for (int j = i +1; j < list.length; j++){
+				if (currentMin > list[j]){
+					currentMin = list[j];
+					currentMinIndex = j;
+		
+				}
+			}
+	
+			if (currentMinIndex != i){
+				list[currentMinIndex] = list[i];
+				list[i] = currentMin;
+			}
+		}
+		
+		System.out.println(list[0] + " ");
+		
+		for ( int i = 1; i < list.length; i++){
+			if( list[i] != list[i -1])
+				System.out.println(list[i] + " ");
+		}
+	}
+}
+
+	
+
+
+
+package Shuzichuxiancishu6;
+
+import java.awt.List;
+import java.util.Scanner;
+
+public class Shuzichuxiancishu {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the integers between 1 and 100: ");
+		
+		int[] list = new int[100];
+		
+		for (int i = 0; i < list.length; i++){
+			list[i] = input.nextInt();
+		}
+		
+		int[] counts = countNumbers(list);
+		
+		displayCounts(counts);
+
+	}
+	
+	public static int[] countNumbers(int[] list){
+		int[] counts = new int[100];
+		
+		for (int i = 0; i < list.length; i++)
+			counts[list[i]]++;
+		
+		return counts;
+	}
+	
+	public static void displayCounts(int[] counts){
+		for (int i = 0; i < counts.length; i++){
+			System.out.println(i + " occurs " + counts[i] + " time");
+
+		}
+	}
+
+}
+

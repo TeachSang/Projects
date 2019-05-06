@@ -1,0 +1,9 @@
+﻿  源.c
+c:\users\teacher.sang\documents\visual studio 2015\projects\8.9\8.9\源.c(21): warning C4013: “toword”未定义；假设外部返回 int
+c:\users\teacher.sang\documents\visual studio 2015\projects\8.9\8.9\源.c(14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 参见“scanf”的声明
+c:\users\teacher.sang\documents\visual studio 2015\projects\8.9\8.9\源.c(8): warning C4101: “a”: 未引用的局部变量
+c:\users\teacher.sang\documents\visual studio 2015\projects\8.9\8.9\源.c(33): warning C4013: “strcat”未定义；假设外部返回 int
+c:\users\teacher.sang\documents\visual studio 2015\projects\8.9\8.9\源.c(88): warning C4716: “toword”: 必须返回一个值
+  8.9.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\8.9\Debug\8.9.exe
+  8.9.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\8.9\Debug\8.9.pdb (Full PDB)

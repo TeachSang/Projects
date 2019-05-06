@@ -1,0 +1,249 @@
+9.1
+import java.util.Scanner;
+
+public class CheckPalindrome {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a string: ");
+		String s = input.nextLine();
+		
+		if(isPalindrome(s))
+			System.out.println(s + " is a palindrome");
+		else 
+			System.out.println(s + " is not a palindrome");
+
+	}
+	
+	public static boolean isPalindrome(String s){
+		int low = 0;
+		int high = s.length() - 1;
+		while(low < high){
+			if (s.charAt(low) != s.charAt(high))
+				return false;
+			
+			low++;
+			high--;
+		}
+		return true;
+	}
+
+}
+
+
+	
+
+
+9.2
+import java.util.Scanner;
+
+public class HexToDecimalConversion {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a hex number: ");
+		String hex = input.nextLine();
+		
+		System.out.println("The decimal value for hex number " +
+		 hex + " is " + hexToDecimal(hex.toUpperCase()));
+		
+	}
+	
+	public static int hexToDecimal(String hex){
+		int decimalValue = 0;
+		for(int i = 0; i < hex.length(); i++){
+			char hexChar = hex.charAt(i);
+			decimalValue = decimalValue *16 + hexCharToDecimal(hexChar);
+		}
+		return decimalValue;
+	}
+	
+	public static int hexCharToDecimal(char ch){
+		if (ch >= 'A' && ch <= 'F')
+			return 10 + ch - 'A';
+		else
+			return ch - '0';
+	}
+
+}
+
+
+9.3 
+import java.util.Scanner;
+
+public class CountEachLetter {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a string: ");
+		String s = input.nextLine();
+		
+		int[] counts = countLetters(s.toLowerCase());
+		
+		for (int i = 0; i < counts.length; i ++){
+			if (counts[i] != 0)
+				System.out.println((char)('a' + i) + " appears " + 
+			counts[i] + ((counts[i]==1) ? " time" : " times"));
+		}
+
+	}
+	
+	public static int[] countLetters(String s){
+		int[] counts = new int[26];
+		
+		for (int i = 0; i < s.length(); i++){
+			if (Character.isLetter(s.charAt(i)) )
+				counts[s.charAt(i) - 'a']++;
+		}
+		
+		return counts;
+	}
+
+}
+
+
+9.4
+import java.util.Scanner;
+
+public class PalindromeIgnoreNonAlphanumberic {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a string£º");
+		String s = input .nextLine();
+		
+		System.out.println("Ignoring nonalphanumberic charachters, \nis " + 
+		s + " a palndromme? " + isPalindrome(s));
+		
+
+	}
+	
+	public static boolean isPalindrome(String s){
+		String s1 = filter(s);
+		String s2 = reverse(s1);
+		
+		return s2.equals(s1);
+	}
+	
+	public static String filter(String s){
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		for (int i = 0; i < s.length(); i++){
+			if(Character.isJavaLetterOrDigit(s.charAt(i))){
+			stringBuilder.append(s.charAt(i));
+		}
+	}
+		
+		return stringBuilder.toString();
+
+	}
+	public static String reverse(String s){
+		StringBuilder stringBuilder = new StringBuilder(s);
+		stringBuilder.reverse();
+		return stringBuilder.toString();
+		
+	}
+	
+}
+
+
+9.7
+public class WriteData {
+
+	public static void main(String[] args) {
+		java.io.File file = new java.io.File("scores.txt");
+		if(file.exists()){
+			System.out.println("File already exists");
+			System.exit(0);
+		}
+		
+		java.io.PrintWriter output = new java.io.PrintWriter(file);
+		
+		output.print("John T Smith ");
+		output.println(90);
+		output.print("Eric K Jones ");
+		output.println(85);
+		
+		output.close();
+
+	}
+
+}
+
+
+
+9.8
+import java.util.Scanner;
+
+public class ReadData {
+
+	public static void main(String[] args) throws Exception {
+		java.io.File file = new java.io.File("Scores.txt");
+		
+		Scanner input = new Scanner(file);
+		
+		while (input.hasNext()){
+			String firstName = input.next();
+			String mi = input.next();
+			String lastName = input.next();
+			int score = input.nextInt();
+			System.out.println(firstName + " " + mi + " " + lastName + " " + score);
+		}
+		
+		input.close();
+
+	}
+
+}
+
+
+
+
+import java.io.FileNotFoundException;
+
+public class Exercise9_19 {
+
+	public static void main(int args[]) throws FileNotFoundException{
+		java.io.File file = new java.io.File("Exercise9_19");
+		if(file.exists()){
+			System.out.println("File already exists");
+			System.exit(0);
+		}
+		
+		java.io.PrintWriter output = new java.io.PrintWriter(file);
+		
+		for(int i = 0; i < 99; i++){
+			output.print(args[(int)Math.random() * 100]);
+			output.println(" ");
+		}
+		for (int i = 0; i< args.length - 1; i++){
+			int currentMin = args[i];
+		int currentMinIndex = 1;
+		
+		for (int j = i +1; j < args.length; j++){
+			if (currentMin > args[j]){
+				currentMin = args[i];
+				currentMinIndex = j;
+			}
+		}
+		
+		if (currentMinIndex != i){
+			args[currentMinIndex] = args[i];
+			args[i] = currentMin;
+		
+		}
+		System.out.println(args[i]);
+		}
+		output.println(args);
+			output.close()	;
+		}
+	
+	
+
+
+
+	
+

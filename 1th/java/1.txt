@@ -1,0 +1,90 @@
+ภýฬโ
+package welcome1;
+
+public class weclome1 {
+	public static void main(String[] args) {
+		System.out.println("programming is fun!");
+		System.out.println("fundamentals first");
+		System.out.println("problem dirven");
+	}
+}
+
+
+package welcome2;
+
+public class welcome2 {
+
+	public static void main(String[] args) {
+		 System.out.println("welcome to java");
+	     System.out.println("welcome to commputer science");
+	     System.out.println("programming is fun");
+	}
+
+}
+
+
+package computerexpression;
+
+public class computerexpression {
+
+	public static void main(String[] args) {
+		System.out.println((10.5+2*3)/(45-3.5));
+
+	}
+
+}
+
+
+
+
+ื๗าต
+1.4
+A program written in a high-level lanuage.
+Translate it into a machine lanuage ,then link with other supporting library code to from an executable file.
+
+1.5
+The virtual machine is a program that interprets java bytecode.
+
+1.13
+.java      .class
+
+1.16
+public static void main(string[] args){
+}
+
+public class welcome {
+    System.out.println("moring");
+    System.out.println("afternoon");
+}
+
+
+
+
+1.1
+public class welcome {
+  public static void main(string[] args){
+     System.out.println("welcome to java");
+     System.out.println("welcome to commputer science");
+     System.out.println("programming is fun");
+ }
+}
+
+1.5
+public class computerexpression {
+  public static void main(string[] args){
+     System.out.println((9.5*4.5-2.5*3)/(45.5-3.5));     
+ }
+}
+
+
+1.6
+public class mm {
+
+public static void main(String[] args) {
+		double n;
+		double sum;
+		n=3;
+		sum=(1+n)*n/2;
+		System.out.println("The sum for the shulie of n " + n + " is " + sum);
+		}
+}

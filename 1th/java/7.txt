@@ -1,0 +1,217 @@
+7.3
+import java.util.Scanner;
+
+public class FindNearestPoint {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the number of points: ");
+		int numberOfPoints = input.nextInt();
+		
+		double[][] points = new double[numberOfPoints][2];
+		System.out.println("Enter " + numberOfPoints + " points: ");
+		for (int i = 0; i < points.length; i++){
+			points[i][0] = input.nextDouble();
+			points[i][1] = input.nextDouble();
+		}
+		
+		int p1 = 0, p2 = 1;
+		double shortestDistance = distance(points[p1][0], points[p1][1],
+				points[p2][0],points[p2][1]);
+		
+		for (int i = 0; i < points.length; i++){
+			for (int j = i + 1; j < points.length; j++){
+				double distance = distance(points[i][0], points[i][1],
+				points[i][0],points[i][1]);
+				
+				if(shortestDistance > distance){
+					p1 = i;
+					p2 = j;
+					shortestDistance = distance;
+				}
+			}
+		}
+		
+		System.out.println("The closest two points are " + "(" + points[p1][0] + ", " + points[p1][1] +
+				") and (" + points[p2][0] + ", " + points[p2][1] +")");
+	}
+	
+	public static double distance(double x1,double y1,double x2,double y2){
+		return Math.sqrt((x2 - x1) * (x2 -x1) + (y2 -y1) *(y2 - y1));
+	}
+
+}
+
+
+
+7.4
+import java.util.Scanner;
+
+public class CheckSudokuSolution {
+
+	public static void main(String[] args) {
+		int[][] grid = readASolution();
+		
+		System.out.println(isValid(grid) ? "Valid solution" : "Invalid solution");
+
+	}
+	
+	public static int[][] readASolution(){
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a Sudoku puzzle solution:");
+		int[][] grid = new int[9][9];
+		for (int i = 0; i < 9; i++)
+			for (int j = 0; j < 9; j++)
+				grid[i][j] = input.nextInt();
+		
+		return grid;
+	}
+	
+	public static boolean isValid(int[][] grid){
+		for (int i = 0; i < 9; i++)
+			if (!is1To9(grid[i]) )
+				return false;
+	
+		for (int j = 0; j < 9; j++){
+			int[] column = new int[9];
+			for (int i = 0; i <9; i++){
+				column[i] = grid[i][j];
+			}
+			
+			if(!is1To9(column) )
+				return false;
+		}
+		
+		for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
+				int k = 0;
+				int[] list = new int[9];
+				for (int row = i * 3; row < i * 3 + 3; row++)
+					for (int column = i * 3; column < i * 3 + 3; column++)
+						list[k++] = grid[row][column];
+				if(!is1To9(list) )
+					return false;
+			}
+		}
+		
+		return true;
+	}
+
+	public static boolean is1To9(int[] list){
+		int[] temp = new int[list.length];
+		System.arraycopy(list, 0, temp, 0, list.length);
+		
+		java.util.Arrays.sort(temp);
+		
+		for (int i = 0; i < 9; i++)
+			if (temp[i] != i + 1)
+				return false;
+		
+		return true;
+	}
+
+}
+
+7.5
+import java.util.Scanner;
+
+public class Weather {
+
+	public static void main(String[] args) {
+		final int NUMBER_OF_DAYS = 10;
+		final int NUMBER_OF_HOURS = 24;
+		double[][][] data = new double[NUMBER_OF_DAYS][NUMBER_OF_HOURS][2];
+		
+		Scanner input = new Scanner(System.in);
+		
+		for (int k = 0; k < NUMBER_OF_DAYS * NUMBER_OF_HOURS; k++){
+			int day = input.nextInt();
+			int hour = input.nextInt();
+			double temperature = input.nextDouble();
+			double humidity = input.nextDouble();
+			data[day - 1][hour - 1][0] = temperature;
+			data[day - 1][hour - 1][0] = humidity;
+		}
+		
+		for (int i = 0; i < NUMBER_OF_DAYS; i++){
+			double dailyTemperatureTotal = 0, dailyHumidityTotal = 0;
+			for (int j = 0; j < NUMBER_OF_HOURS; j++){
+				dailyTemperatureTotal += data[i][j][0];
+				dailyHumidityTotal += data[i][j][1];
+			}
+			
+			System.out.println("Day " + i + "'s average temperature is " + 
+					dailyTemperatureTotal / NUMBER_OF_HOURS);
+			System.out.println("Day " + i + "'s average humiditye is " + 
+					dailyHumidityTotal / NUMBER_OF_HOURS);
+		}
+
+
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class ConsecutiveFour {
+
+	public static void main(String[] args) {
+
+		int[][] grid = readAArray();
+		
+		System.out.println(isVaild(grid) ? "Consecutive array" : "Inconsecutive array");
+	}
+	
+	public static int[][] readAArray(){
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a 7*7 two-dimensional array:");
+		int[][] grid = new int[7][7];
+		for (int i = 0; i < 7; i++)
+			for (int j = 0; j < 7; j++)
+				grid[i][j] = input.nextInt();
+		
+		return grid;
+	}
+	
+	public static boolean isVaild(int[][] grid){
+		for (int i = 0; i < 7; i++)
+			if (!isConsecutive(grid[i]) )
+				return true;
+	
+		for (int j = 0; j < 7; j++){
+			int[] column = new int[7];
+			for (int i = 0; i < 7; i++){
+				column[i] = grid[i][j];
+			}
+			
+			if(!isConsecutive(column) )
+				return true;
+		}
+		
+		
+		int[] diagonal = new int[7];
+		for (int j = 0; j < 7; j++){
+			for (int i = 0; i < 7; i++){
+				diagonal[i] = grid[i][j];
+			}
+			if(!isConsecutive(diagonal) )
+				return true;
+		}
+		return false;
+	}
+
+	public static boolean isConsecutive(int[] diagonal){
+
+		for (int i = 0; i < 4; i++)
+			if (diagonal[i] != diagonal[i + 1] && diagonal[i] != diagonal[i + 2] && diagonal[i] != diagonal[i + 3])
+				return true;
+		
+		return false;
+	}
+
+
+}
+

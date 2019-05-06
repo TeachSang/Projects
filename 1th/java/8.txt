@@ -1,0 +1,351 @@
+8.1
+public class Testcircle1 {
+
+	public static void main(String[] args) {
+		Circle1 circle1 = new Circle1();
+		System.out.println("The area of the circle of radius " + circle1.radius + " is " + circle1.getArea() );
+		
+		Circle1 circle2 = new Circle1(25);
+		System.out.println("The area of the circle of radius " + circle2.radius + " is " + circle2.getArea() );
+		
+		Circle1 circle3 = new Circle1(125);
+		System.out.println("The area of the circle of radius " + circle3.radius + " is " + circle3.getArea() );
+		
+		circle1.radius = 100;
+		System.out.println("The area of the circle of radius " + circle2.radius + " is " + circle2.getArea() );
+
+	}
+
+}
+
+8.2
+class Circle1{
+	double radius;
+	
+	Circle1(){
+		radius = 1.0;
+	}
+	
+	Circle1(double newRadius){
+		radius = newRadius;
+	}
+	double getArea(){
+		return radius * radius * Math.PI;
+	}
+}
+
+
+8.3
+public class TV {
+	int channel = 1;
+	int volumeLevel = 1;
+	boolean on = false;
+	
+	public TV(){
+	}
+	
+	public void turnOn(){
+		on = true;
+	}
+	
+	public void turnOff(){
+		on = false;
+	}
+	
+	public void setChannel(int newChannel){
+		if (on && newChannel >= 1 && newChannel <= 120)
+			channel = newChannel;
+	}
+	
+	public void setVolume(int newVolumeLevel){
+		if (on && newVolumeLevel >= 1 && newVolumeLevel <= 7)
+			volumeLevel = newVolumeLevel;
+	}
+	
+	public void channelUp(){
+		if (on && channel < 120)
+			channel++;
+	}
+	
+	public void channelDown(){
+		if (on && channel > 1)
+			channel--;
+	}
+	
+	public void volumelUp(){
+		if (on && volumeLevel < 7)
+			volumeLevel++;
+	}
+	
+	public void volumelDown(){
+		if (on && volumeLevel > 1)
+			volumeLevel--;
+	}
+}
+
+
+8.4
+public class TestTV {
+
+	public static void main(String[] args) {
+		TV tv1 = new TV();
+		tv1.turnOn();
+		tv1.setChannel(30);
+		tv1.setVolume(3);
+		
+		TV tv2 = new TV();
+		tv2.turnOn();
+		tv2.channelUp();
+		tv2.channelUp();
+		tv2.volumelUp();
+		
+		System.out.println("tv1's channel is " + tv1.channel + " and volume level is " + tv1.volumeLevel);
+		
+		System.out.println("tv2's channel is " + tv1.channel + " and volume level is " + tv2.volumeLevel);
+
+	}
+
+}
+
+
+class TV {
+	int channel = 1;
+	int volumeLevel = 1;
+	boolean on = false;
+	
+	public TV(){
+	}
+	
+	public void turnOn(){
+		on = true;
+	}
+	
+	public void turnOff(){
+		on = false;
+	}
+	
+	public void setChannel(int newChannel){
+		if (on && newChannel >= 1 && newChannel <= 120)
+			channel = newChannel;
+	}
+	
+	public void setVolume(int newVolumeLevel){
+		if (on && newVolumeLevel >= 1 && newVolumeLevel <= 7)
+			volumeLevel = newVolumeLevel;
+	}
+	
+	public void channelUp(){
+		if (on && channel < 120)
+			channel++;
+	}
+	
+	public void channelDown(){
+		if (on && channel > 1)
+			channel--;
+	}
+	
+	public void volumelUp(){
+		if (on && volumeLevel < 7)
+			volumeLevel++;
+	}
+	
+	public void volumelDown(){
+		if (on && volumeLevel > 1)
+			volumeLevel--;
+	}
+}
+
+
+8.5
+import javax.swing.JFrame;
+
+public class TestFrame {
+
+	public static void main(String[] args) {
+		JFrame frame1 = new JFrame();
+	
+		frame1.setTitle("Window 1");
+		frame1.setSize(200, 150);
+		frame1.setLocation(200, 100);
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.setVisible(true);
+		
+		JFrame frame2 = new JFrame();
+		frame2.setTitle("Window 2");
+		frame2.setSize(200, 150);
+		frame2.setLocation(410, 100);
+		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setVisible(true);
+		
+
+
+
+	}
+
+}
+
+
+8.6
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+public class GUIComponents {
+
+	public static void main(String[] args) {
+		JButton jbtOK = new JButton("OK");
+		
+		JButton jbtCancel = new JButton("Cancel");
+		
+		JLabel jlblName = new JLabel("Enter you name: ");
+		
+		JTextField jtfName = new JTextField("Type Name Here:");
+		
+		JCheckBox jchkBold = new JCheckBox("Bold");
+		
+		JCheckBox jchkItalic = new JCheckBox("Italic");
+		
+		JRadioButton jrbRed = new JRadioButton("Red");
+		
+		JRadioButton jrbYellow = new JRadioButton("Yellow");
+		
+		JComboBox jcboColor = new JComboBox(new String[]{"Freshman", "Sophomore", "Junior", "Senior"});
+	
+		JPane1 pane1 = new JPane1();
+		pane1.add(jbtOK);
+		pane1.add(jbtCancel);
+		pane1.add(jlblName);
+		pane1.add(jtfName);
+		pane1.add(jchkBold);
+		pane1.add(jchkItalic);
+		pane1.add(jrbRed);
+		pane1.add(jrbYellow);
+		pane1.add(jcboColor);
+		
+		JFrame frame = new JFrame();
+		frame.add(pane1);
+		frame.setTitle("Show GUI Components");
+		frame.setSize(450, 100);
+		frame.setLocation(200, 100);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+
+}
+
+
+
+public class Rectangle{
+		double width;
+		double heighth;
+		
+		static int numberOfObjects = 0;
+		
+		Rectangle() {
+			width = 1.0;
+			heighth = 1.0;
+			numberOfObjects++;
+		}
+		
+		Rectangle(double newWidth, double newHeighth) {
+			width = newWidth;
+			heighth = newHeighth;
+			numberOfObjects++;
+		}
+		
+		static int getNumberOfObjects(){
+			return numberOfObjects;
+		}
+		
+		double getArea(){
+			return width * heighth;
+		}
+		
+		double getPerimmeter() {
+			return 2 * (width + heighth);
+		}
+
+	
+
+
+		public static void main(String[] args){
+			Rectangle rectangle1 = new Rectangle();
+			System.out.println("The area of the rectangle of width and heighth " 
+					+ rectangle1.width + rectangle1.heighth + " is " + rectangle1.getArea() );
+			
+			Rectangle rectangle2 = new Rectangle(4, 40);
+			System.out.println("The area of the rectangle of width and heighth " 
+					+ rectangle2.width + rectangle2.heighth + " is " + rectangle2.getArea() );
+			
+			Rectangle rectangle3 = new Rectangle(3.5, 35.9);
+			System.out.println("The area of the rectangle of width and heighth " 
+					+ rectangle3.width + rectangle3.heighth + " is " + rectangle3.getArea() );
+
+		}
+	}
+
+
+
+import java.util.Scanner;
+
+public class QuadraticEquation {
+	private double a;
+	private double b;
+	private double c;
+	
+	QuadraticEquation(double newA, double newB, double newC){
+		a = newA;
+		b = newB;
+		c = newC;
+	}
+	
+	double getA(){
+		return a;
+	}
+	
+	double getB(){
+		return b;
+	}
+	
+	double getC(){
+		return c;
+	}
+	
+	double getDiscriminant(){
+		return (b * b -4 * a *c);
+	}
+	
+	double getRoot1(){
+		return ((-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a));
+	}
+	
+	double getRoot2(){
+		return ((-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a));
+	}
+
+
+
+	public static void main(String[] args){
+
+		System.out.println("Enter the value of a, b, c : ");
+		Scanner input = new Scanner(System.in);
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		QuadraticEquation quadraticEquation1 = new QuadraticEquation(a, b, c);
+		
+		if(quadraticEquation1.getDiscriminant() > 0)
+			System.out.println("The QuadraticEquation is: " + 
+		quadraticEquation1.getRoot1() + quadraticEquation1.getRoot2() + " . ");
+			
+			else if(quadraticEquation1.getDiscriminant() == 0)
+				System.out.println("The QuadraticEquation is: " + 
+						quadraticEquation1.getRoot1() );
+			else
+				System.out.println("The equation has no roots");	
+		}
+}

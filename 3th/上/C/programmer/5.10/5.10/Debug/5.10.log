@@ -1,0 +1,7 @@
+﻿  源.c
+c:\users\teacher.sang\documents\visual studio 2015\projects\5.10\5.10\源.c(28): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\teacher.sang\documents\visual studio 2015\projects\5.10\5.10\源.c(29): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\teacher.sang\documents\visual studio 2015\projects\5.10\5.10\源.c(14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 参见“scanf”的声明
+  5.10.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\5.10\Debug\5.10.exe
+  5.10.vcxproj -> c:\users\teacher.sang\documents\visual studio 2015\Projects\5.10\Debug\5.10.pdb (Full PDB)
