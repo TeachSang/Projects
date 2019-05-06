@@ -1,0 +1,50 @@
+#include"stdio.h"
+int main()
+{
+	int a,b,c,d,t;
+	printf("Which function do you want to chose?\n");
+	printf("Choose 1, 2 or 3\n");
+	scanf("%d", &t);
+	if(t == 1)
+	{
+		multByTwo (int a);
+	}
+	else if(t == 2)
+	{
+		isFirstBigger (int b,int c);
+	}
+	else if(t == 3)
+	{
+		addVat (float d);
+	}
+	else
+	{
+		printf("Please input 1, 2 or 3\n");
+	}
+}
+
+int multByTwo (int)
+{
+	int a;
+	scanf("%d",&a);
+	printf("The double number is %d\n", 2*a);
+}
+int isFirstBigger (int,int)
+{
+	int b, c;
+	scanf("%d %d", &b,&c);
+	if(b > c)
+	{
+		printf("1\n");
+	}
+	else
+	{
+		printf("0\n");
+	}
+}
+float addVat (float)
+{
+	float d;
+	scanf("%f",&d);
+	printf("The 120% of the number is %f\n", 1.2*d);
+}

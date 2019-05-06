@@ -1,0 +1,9 @@
+﻿  源.c
+c:\users\96360\documents\visual studio 2015\projects\cousework3.0\cousework3.0\源.c(112): warning C4133: “函数”: 从“int [4]”到“char *”的类型不兼容
+c:\users\96360\documents\visual studio 2015\projects\cousework3.0\cousework3.0\源.c(113): warning C4133: “函数”: 从“int [4]”到“const char *”的类型不兼容
+c:\users\96360\documents\visual studio 2015\projects\cousework3.0\cousework3.0\源.c(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+c:\users\96360\documents\visual studio 2015\projects\cousework3.0\cousework3.0\源.c(112): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strrev. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(593): note: 参见“strrev”的声明
+c:\users\96360\documents\visual studio 2015\projects\cousework3.0\cousework3.0\源.c(25): warning C4101: “lineOfText”: 未引用的局部变量
+LINK : fatal error LNK1104: 无法打开文件“C:\Users\96360\documents\visual studio 2015\Projects\cousework3.0\Debug\cousework3.0.exe”

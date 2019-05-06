@@ -1,0 +1,7 @@
+﻿  源.cpp
+c:\users\96360\documents\visual studio 2015\projects\test\test\源.cpp(8): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
+  c:\users\96360\documents\visual studio 2015\projects\test\test\源.cpp(8): note: 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
+  c:\users\96360\documents\visual studio 2015\projects\test\test\源.cpp(8): note: 缺失的可变参数 2 为格式字符串“%s”所需
+  c:\users\96360\documents\visual studio 2015\projects\test\test\源.cpp(8): note: 此参数用作缓冲区大小
+  test.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\test\Debug\test.exe
+  test.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\test\Debug\test.pdb (Full PDB)

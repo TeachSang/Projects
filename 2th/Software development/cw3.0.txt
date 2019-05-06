@@ -1,0 +1,167 @@
+#include"stdio.h"
+#include"string.h"
+#include"stdlib.h"
+#define p 1000
+void Compare(int i, int j);
+int main()
+{
+	FILE *tests;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+	int f = 0;
+	int q = 0;
+	int ch;
+	int n = 0;
+	char str[p];
+	char num[] = "\n";
+	char mem[] = "    ";
+	tests = fopen("t6", "r");
+	if (tests != NULL)
+	{
+		char lineOfText[100];
+		while ((ch = fgetc(tests)) != EOF)
+		{
+			q++;
+			if (ch == '(')
+			{
+				a++;
+			}
+			if (ch == ')')
+			{
+				b++;
+			}
+			if (ch == '[')
+			{
+				c++;
+			}
+			if (ch == ']')
+			{
+				d++;
+			}
+			if (ch == '{')
+			{
+				e++;
+			}
+			if (ch == '}')
+			{
+				f++;
+			}
+		}
+
+		printf("The '(' has appeared %d times.\n", a);
+		printf("The ')' has appeared %d times.\n", b);
+		printf("The '[' has appeared %d times.\n", c);
+		printf("The ']' has appeared %d times.\n", d);
+		printf("The '{' has appeared %d times.\n", e);
+		printf("The '}' has appeared %d times.\n", f);
+		printf("\n-----------------------------------------------------\n");
+		printf("The amounts of '(' is ");
+		Compare(a, b);
+		printf(" ')'.\n");
+		printf("The amounts of '[' is ");
+		Compare(c, d);
+		printf(" ']'.\n");
+		printf("The amounts of '{' is ");
+		Compare(e, f);
+		printf(" '}'.\n");
+
+		rewind(tests);
+		do {
+			for (int i = 0; i <= q; i++)
+			{
+				str[i] = fgetc(tests);
+				//ch = fgetc(tests);
+			}
+		} while (ch != EOF);
+
+		char dest[p];
+		char best[p];
+		char cest[p];
+		char aest[p];
+		for (int j = 0; j <= q; j++)
+		{
+			if (str[j] == '(' || str[j] == '[' || str[j] == '{')
+			{
+				n++;
+				char *z;
+				char *y;
+				z = str;
+				y = dest;
+				for (int i = 0; i <= j; i++)
+				{
+					dest[i] = *z++;
+				}
+				strcat(dest, num);
+				strcat(dest, z);
+				for (int k = 0; k <= n; k++)
+				{
+					for (int i = 0; i <= j + 1; i++)
+					{
+						dest[i] = *y++;
+					}
+					strcat(dest, mem);
+					strcat(dest, y);
+					strcpy(aest, dest);
+				}
+			}
+			else if (dest[j] == ')' || dest[j] == ']' || dest[j] == '}')
+			{
+				char *z;
+				char *y;
+				z = aest;
+				for (int l = 0; l < j; l++)
+				{
+					best[l] = *z++;
+				}
+				strcat(best, num);
+				strcat(best, z);
+				for (int l = n; l >= 0; l--)
+				{
+					{
+						best[l] = *y++;
+					}
+					strcat(best, mem);
+					strcat(best, y);
+					strcpy(aest, dest);
+				}
+			}
+			else
+			{
+				char *z;
+				char *y;
+				z = aest;
+				for (int k = 0; k <= n; k++)
+				{
+					for (int i = 0; i <= j; i++)
+					{
+						cest[i] = *y++;
+					}
+					strcat(cest, mem);
+					strcat(cest, y);
+					strcpy(aest, dest);
+				}
+			}
+		}
+		printf("%s", aest);
+		fclose(tests);
+	}
+}
+
+void Compare(int i, int j)
+{
+	if (i == j)
+	{
+		printf("equal to");
+	}
+	else if (i > j)
+	{
+		printf("more than");
+	}
+	if (i < j)
+	{
+		printf("less than");
+	}
+}

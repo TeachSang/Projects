@@ -1,0 +1,14 @@
+﻿  源.c
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(132): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(148): warning C4013: “isalnum”未定义；假设外部返回 int
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(23): warning C4305: “初始化”: 从“int”到“char”截断
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(24): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(21): warning C4101: “str”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(27): warning C4101: “lineOfText”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(79): warning C4101: “bal”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(262): warning C4028: 形参 1 与声明不同
+c:\users\96360\documents\visual studio 2015\projects\coursework6.0\coursework6.0\源.c(265): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+  Coursework6.0.vcxproj -> C:\Users\96360\Documents\Visual Studio 2015\Projects\Coursework6.0\Debug\Coursework6.0.exe
+  Coursework6.0.vcxproj -> C:\Users\96360\Documents\Visual Studio 2015\Projects\Coursework6.0\Debug\Coursework6.0.pdb (Full PDB)

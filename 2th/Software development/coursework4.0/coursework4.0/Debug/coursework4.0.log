@@ -1,0 +1,10 @@
+﻿  Progam.c
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(229): warning C4013: “isalnum”未定义；假设外部返回 int
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(21): warning C4305: “初始化”: 从“int”到“char”截断
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(19): warning C4101: “str”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(25): warning C4101: “lineOfText”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\coursework4.0\coursework4.0\progam.c(133): warning C4101: “bal”: 未引用的局部变量
+  coursework4.0.vcxproj -> C:\Users\96360\Documents\Visual Studio 2015\Projects\coursework4.0\Debug\coursework4.0.exe
+  coursework4.0.vcxproj -> C:\Users\96360\Documents\Visual Studio 2015\Projects\coursework4.0\Debug\coursework4.0.pdb (Full PDB)

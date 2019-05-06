@@ -1,0 +1,42 @@
+#include"stdio.h"
+#include"string.h"
+#include "ctype.h"
+int main()
+{
+	int a;
+	char OriginalPassport[]="123456abc";
+	char InputPassport[];
+	char NewPassport1[];
+	char NewPassport2[];
+	printf("Please enter the Passport:\n");
+	scanf("%s",&InputPassport[]);
+	printf("You enter is %s",InputPassport[]);  
+	if(strcmp(OriginalPassport,InputPassport)==0)
+	{
+            printf("You enter in correct!\n");
+			printf("Do you want to change you passport?\n");
+			printf("Input Yes or No(The 'Y' is yes and the 'N' is no)\n");
+			scanf("%c",&a);
+			if(a == Y)
+			{
+				do{
+				printf("Please enter you new passport:\n");
+				scanf("%s",NewPassport1);
+				printf("Please enter again:\n");
+				scanf("%s",NewPassport1);
+				}while(strcmp(OriginalPassport,InputPassport)==0 && strlen(NewPassport1) > 8 && (isalpha(NewPassport1) != 0) && (isdigit(NewPassport1) != 0);
+				strcpy(OriginalPassport,NewPassport1);
+				printf("OK!You have changed you passport successfully!\n");
+			}
+			else if(a==N)
+			{
+				printf("Thank you!");
+			}
+			else 
+			{
+				printf("Plesase input 'Y' or 'N'!\n");
+       else
+            printf("Sorry, you enter is incorrect!\n");
+	
+}
+	

@@ -1,0 +1,25 @@
+#define m=NULL
+#include"stdio.h"
+#include"time.h"
+int main()
+{
+	int a,n;
+	srand(time(m));
+	n = rand() % 10;
+	printf("I've thought of a number. Enter your guess");
+		do()
+		{
+			scanf("%d",&a);
+			printf("> %d", a);
+			if(a > n)
+			{
+				printf("Higher!");
+			}
+			else if(a < n)
+			{
+				printf("Lower!");
+			}
+		}while(a != n);
+		printf("Well done, the number I thought of was %d",n);
+}
+	

@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	FILE *myFileHandle;
+	int i;
+	i=0;
+	myFileHandle=fopen("access.txt",    "r");
+	if(myFileHandle != NULL)
+	{
+		char lineOfText[80];
+	while(fgets(lineOfText, 80, myFileHandle)!=NULL)
+	{
+		i++;
+		printf("line red is %s",lineOfText);
+	}
+	printf("The hits are %d",i);
+	fclose(myFileHandle);
+	}
+	system("pause");
+}

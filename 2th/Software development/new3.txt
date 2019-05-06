@@ -1,0 +1,35 @@
+#define m=NULL
+#include"stdio.h"
+#include"time.h"
+int main()
+{
+	int a,b,c,m,n,l;
+	srand(time(m));
+	m = rand() % 4 +1;
+	n = rand() % 4 +1;
+	l = rand() % 4 +1;
+	printf("Fruit machine has 3 reels, each containing the following symbols:\n");
+	printf"1. a bell\n
+		   2. an orange\n
+		   3. a cherry\n
+		   4. a horseshoe\n");
+	printf("Please input 1, 2 , 3 or 4 to express the fruit you want to choose.\n");
+	scanf("%d %d %d", &a,&b,&c);
+	printf"\n-----------------------------------------\n");
+	printf("Your enter is %d-%d-%d\n");
+	printf("The jackpot is %d-%d-%d");
+	if( (a==m && b==n && c!=l) || (a==m && b!=n && c==l) || (a!=m && b==n && c==l))
+	{
+		printf("You win the game!");
+		}
+	else if ((a!=m && b!=n && c!=l)
+	{
+		printf("Sorry you lose~");
+	}
+	else if ((a==m && b==n && c==l)
+	{
+		printf("congratulation!\nYou get the jackpot!!!\n> - <");
+	}
+}
+
+	

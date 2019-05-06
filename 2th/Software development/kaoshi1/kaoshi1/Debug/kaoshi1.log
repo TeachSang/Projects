@@ -1,0 +1,5 @@
+﻿  源.c
+c:\users\96360\documents\visual studio 2015\projects\kaoshi1\kaoshi1\源.c(19): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: 参见“strdup”的声明
+  kaoshi1.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\kaoshi1\Debug\kaoshi1.exe
+  kaoshi1.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\kaoshi1\Debug\kaoshi1.pdb (Full PDB)

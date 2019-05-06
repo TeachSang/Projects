@@ -1,0 +1,8 @@
+﻿  Program.c
+c:\users\96360\documents\visual studio 2015\projects\cousework1.0\cousework1.0\program.c(21): warning C4047: “=”:“FILE *”与“errno_t”的间接级别不同
+c:\users\96360\documents\visual studio 2015\projects\cousework1.0\cousework1.0\program.c(19): warning C4047: “初始化”:“char”与“char [2]”的间接级别不同
+c:\users\96360\documents\visual studio 2015\projects\cousework1.0\cousework1.0\program.c(20): warning C4047: “初始化”:“char”与“char [2]”的间接级别不同
+c:\users\96360\documents\visual studio 2015\projects\cousework1.0\cousework1.0\program.c(16): warning C4101: “ch”: 未引用的局部变量
+c:\users\96360\documents\visual studio 2015\projects\cousework1.0\cousework1.0\program.c(18): warning C4101: “str”: 未引用的局部变量
+  cousework1.0.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\cousework1.0\Debug\cousework1.0.exe
+  cousework1.0.vcxproj -> c:\users\96360\documents\visual studio 2015\Projects\cousework1.0\Debug\cousework1.0.pdb (Full PDB)

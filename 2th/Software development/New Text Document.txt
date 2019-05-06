@@ -1,0 +1,50 @@
+#include<stdio.h>
+#inlcude<string.h>
+#include<ctype.h>
+int lengthcheck(char)
+int main()
+{
+	char password;
+	password=123456abc;
+	int i; j; 
+	j=0; i=0;
+	char passwordcheck; newpassword; checknew;
+	printf("please enter your password\n");
+	scanf_s("%s",&passwordcheck);
+	j=strcmp(password,passwordcheck);
+	if(j==0)
+	{
+		printf("correct\n Plase enter your new password\n");
+		scanf_s("%s",&newpassword);
+		if(strlen(newpassword)>8)
+		{
+			printf("Please enter your password again\n");
+			scanf_s("%s",&checknew);
+			while(strcmp(newpassword,checknew)!=0)
+			{
+				printf("the password you enter in the second time is wrong\n");
+				scanf_s("%s",&checknew);
+				i++;
+				if(i>2)
+				{
+					break;
+				}
+				
+			}				
+			if(i<=2)
+			{
+				printf("you have successfully changed your password\n");
+			}
+			else if(i>2)
+			{
+				printf("sorry");
+			}
+		}			
+				
+	}
+	else
+	{
+		printf("Wrong, you got two more chance left\n");
+	}
+}
+	

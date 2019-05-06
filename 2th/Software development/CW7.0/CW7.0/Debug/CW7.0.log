@@ -1,0 +1,7 @@
+﻿  源.c
+c:\users\96360\documents\visual studio 2015\projects\cw7.0\cw7.0\源.c(11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+c:\users\96360\documents\visual studio 2015\projects\cw7.0\cw7.0\源.c(31): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\96360\documents\visual studio 2015\projects\cw7.0\cw7.0\源.c(48): warning C4013: “isalnum”未定义；假设外部返回 int
+  CW7.0.vcxproj -> C:\Users\96360\documents\visual studio 2015\Projects\CW7.0\Debug\CW7.0.exe
+  CW7.0.vcxproj -> C:\Users\96360\documents\visual studio 2015\Projects\CW7.0\Debug\CW7.0.pdb (Full PDB)
